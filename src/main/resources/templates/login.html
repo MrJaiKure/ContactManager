@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+	th:replace="base::layout(~{::section})">
+<head>
+<meta charset="UTF-8" />
+<title >this is home page</title>
+</head>
+<body>
+	<section>
+
+<div class="container mt-2 ">
+			<div class="row">
+				<div class="col-md-8 offset-md-2">
+					<div class="my-card ">
+					
+						<div class="container text-center">
+							<!-- <img src="../images/register.jpg" alt="" class="src" /> -->
+							<h1>Login Here !!</h1>
+						</div>
+
+
+      <!--    ..........................This is my name field........................... -->
+      
+      
+						<form method="post"
+	               data-th-action="@{'/authenticate'}">
+							<div class="mb-3 ">
+								<label for="email_field" class="form-label text-dark">Email
+									address</label> 
+									<input
+									 name="email" 
+									 type="email"
+									 class="form-control border-dark"
+									 id="email"
+									 placeholder="Abc@gmail.com"							
+									  required>
+								<div id="emailHelp" class="form-text">We'll never share
+									your email with anyone else.</div>
+								
+							</div>					
+			 <!--    ..........................This is my password field..................... -->
+			 
+							<div class="mb-3">
+								<label for="password_field" class="form-label text-dark ">Password</label>
+								<input 
+								name="password" 
+								type="password"
+								class="form-control border-dark" 							
+								id="password"
+								placeholder="password"
+ 								 required>									
+							</div>
+							
+
+							<div class="container text-center">
+								<button type="submit" class="btn bg-dark text-white">Login</button>
+								<button type="reset" class="btn bg-warning text-dark">Reset</button>
+							</div>
+						</form>
+
+					</div>
+				</div>
+			</div>
+		</div>
+</section>
+	
+</body>
+</html>

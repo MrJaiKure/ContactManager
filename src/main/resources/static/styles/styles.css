@@ -1,0 +1,36 @@
+body{
+	background:white;
+	color:white;
+	
+}
+.bg-prime{
+/* 	background: linear-gradient(270deg, #DF8908 10%, #B415FF 100%); */
+	background: linear-gradient(270deg, #80a510 10%, #430fdf 100%);
+	
+	
+}
+.home-img{
+ 	background:Linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../images/contact.jpg); 
+ 	background-repeat:no-repeat;
+ 	background-size:cover;
+ 	background-position:center;
+	height:93vh;
+	width:100%
+}
+.my-card{
+	background:gray;
+	padding:20px;
+	border-radius:10px;
+	border:2px solid black
+	
+}
+
+/* .my-card img{
+	height:50px;
+	width:30vh;
+	border-radius: 5px;
+} */
+
+/* @tailwind base;
+@tailwind components;
+@tailwind utilities; */

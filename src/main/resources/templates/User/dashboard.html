@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"xmlns:th="http://www.thymeleaf.org"
+th:replace="base::layout(~{::section})">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>this is the user dashboard</h1>
+    <section>    <h1 class="mt-6 bg-black">this is the user dashboard</h1>
+    <a href="/logout" th:href="@{/logout}" class="btn btn-danger">Logout</a>
+</section>
+
 </body>
 </html>

@@ -55,7 +55,7 @@ public class SecurityConfig {
 	@Bean
 	public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
 		httpSecurity.authorizeHttpRequests(authorize->{
-//			authorize.requestMatchers("/").permitAll();
+			authorize.requestMatchers("/login").permitAll();
 		authorize.requestMatchers("/user/**").authenticated();
 		authorize.anyRequest().permitAll();
 		
@@ -64,18 +64,24 @@ public class SecurityConfig {
 		httpSecurity.formLogin(formlogin->{
 			formlogin.loginPage("/login");
 			formlogin.loginProcessingUrl("/authenticate");
-			formlogin.successForwardUrl("/user/profile");
+			// formlogin.successForwardUrl("/user/profile");
+			formlogin.defaultSuccessUrl("/user/profile", true);
 			formlogin.failureForwardUrl("/login?error=true");
 			formlogin.usernameParameter("email");
      		formlogin.passwordParameter("password");
 		});
 
-//		
-//		httpSecurity.logout(formlogout->{
-//			formlogout.logoutUrl("/logout");
-//		});
+		httpSecurity.csrf().disable(); 
+		
+		httpSecurity.logout(formlogout->{
+			formlogout.logoutUrl("/logout")
+			.logoutSuccessUrl("/login") // Redirect to /login after successful logout
+			.permitAll(); // Allow all users to access the logout URL
+		});
 	
 		return httpSecurity.build();
+
+		
 	}
 	
 	

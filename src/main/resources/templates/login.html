@@ -1,68 +1,49 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org"
-	th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
 <head>
-<meta charset="UTF-8" />
-<title >this is home page</title>
+    <meta charset="UTF-8" />
+    <title>this is home page</title>
 </head>
 <body>
-	<section>
-
-<div class="container mt-2 ">
-			<div class="row">
-				<div class="col-md-8 offset-md-2">
-					<div class="my-card ">
-					
-						<div class="container text-center">
-							<!-- <img src="../images/register.jpg" alt="" class="src" /> -->
-							<h1>Login Here !!</h1>
-						</div>
-
-
-      <!--    ..........................This is my name field........................... -->
-      
-      
-						<form method="POST"
-						th:action="@{'/authenticate'}">
-							<div class="mb-3 ">
-								<label for="email_field" class="form-label text-dark">Email
-									address</label> 
-									<input
-									 name="email" 
-									 type="email"
-									 class="form-control border-dark"
-									 id="email"
-									 placeholder="Abc@gmail.com"							
-									  required>
-								<div id="emailHelp" class="form-text">We'll never share
-									your email with anyone else.</div>
-								
-							</div>					
-			 <!--    ..........................This is my password field..................... -->
-			 
-							<div class="mb-3">
-								<label for="password_field" class="form-label text-dark ">Password</label>
-								<input 
-								name="password" 
-								type="password"
-								class="form-control border-dark" 							
-								id="password"
-								placeholder="password"
- 								 required>									
-							</div>
-							
-
-							<div class="container text-center">
-								<button type="submit" class="btn bg-dark text-white">Login</button>
-								<button type="reset" class="btn bg-warning text-dark">Reset</button>
-							</div>
-						</form>
-
-					</div>
-				</div>
-			</div>
-		</div>
-</section>
-	
+    <section>
+        <div class="container mt-2">
+            <div class="row">
+                <div class="col-md-8 offset-md-2">
+                    <div class="my-card">
+                        <div class="container text-center">
+                            <h1>Login Here !!</h1>
+                        </div>
+                        <!-- Login Form -->
+                        <form method="POST" th:action="@{'/authenticate'}">
+                            <!-- Email Field -->
+                            <div class="mb-3">
+                                <label for="email_field" class="form-label text-dark">Email address</label>
+                                <input name="email" type="email" class="form-control border-dark" id="email" placeholder="Abc@gmail.com" required>
+                                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+                            </div>
+                            <!-- Password Field -->
+                            <div class="mb-3">
+                                <label for="password_field" class="form-label text-dark">Password</label>
+                                <input name="password" type="password" class="form-control border-dark" id="password" placeholder="password" required>
+                            </div>
+                            <div class="container text-center">
+                                <button type="submit" class="btn bg-dark text-white">Login</button>
+                                <button type="reset" class="btn bg-warning text-dark">Reset</button>
+                            </div>
+                        </form>
+                        <!-- Login with Google Button -->
+                        <div class="container text-center mt-3">
+                            <form method="GET" th:action="@{'/oauth2/authorization/google'}">
+                                <button type="submit" class="w3-button w3-block">
+									<img  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAAzFBMVEVHcEz////////+/v77+/vx8fL9/f309fX+/v739/f////09PXOz8/5+vr8/P3////////29vf///////84qlf8wAdGiPX8/PzsUUTqQjQsqFLrSj3S3/w6g/TqPCs0gPQgpUf85+bv9P+63sL62Nb+8ef4ycbw+PJkunkeePP81HXwgGv0jhzc5/3o9efX7N5Fr19Uj/WQy562zPr2trL94KDzoJrzoJv80Gjyl5H94qgyh9v7xzihsSp+wYV1sE5ZtXBmmvUynoWKrvzKDGT6AAAAE3RSTlMAW+TTeBLcHLMt1WsKzfUznkBIxSDAuAAAAUZJREFUKJFtktligkAMRUFZxKVuDMOAggpu1apVu+/t//9TkxBU1PsySQ4hlyGadpTd0fWOrV2R3eqyWhe80j1RpYCc7pmcI2tyaZimQw6bOTMplU9hpKIofJSUmgwtTCYq9EFhqKIJ5lbGdGIRAGhUQLNX6wRLOA2Y8vdpuvfVOJtaOjhdhL56yYrjU8cGFsRSLc4/x+DPfxBiSZN6LMlXUYXzVghBT8/7pPkdxFX28yzEO8HYI8U9dlQudMZx3AeInWWe+SrExxrhCLTre3E+M3P7FXznLn887z53a2PwGbjBLLvUP2jcYUC/FYdOA9d1g22SbN1fbizT9bUxXA+QguB4G2GlfbIFqw1i0GCzKmzDDQ1LZgPQLKHk5rAJpmSj0ykH0jxArW4V79yqF1bMkEckjYvFrTWIy0btApFsx7m68Ff1D4OdMHbngtKsAAAAAElFTkSuQmCC" alt="" srcset="">
+                                    Login with Google
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
 </html>

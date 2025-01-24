@@ -1,0 +1,54 @@
+/*! tailwindcss v4.0.0 | MIT License | https://tailwindcss.com */
+@tailwind base;
+@tailwind components;
+.collapse {
+  visibility: collapse;
+}
+.static {
+  position: static;
+}
+.container {
+  width: 100%;
+}
+.me-auto {
+  margin-inline-end: auto;
+}
+.flex {
+  display: flex;
+}
+.items-center {
+  align-items: center;
+}
+.border {
+  border-style: var(--tw-border-style);
+  border-width: 1px;
+}
+.text-center {
+  text-align: center;
+}
+body {
+  background: white;
+  color: white;
+}
+.bg-prime {
+  background: linear-gradient(270deg, #80a510 10%, #430fdf 100%);
+}
+.home-img {
+  background: Linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url(../images/contact.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 93vh;
+  width: 100%;
+}
+.my-card {
+  background: gray;
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}

@@ -1,11 +1,11 @@
 <!doctype html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{base::layout(~{::section})}">
 <head>
 	<meta charset="UTF-8" />
 	<title th:text="${title}">About</title>
 </head>
 <body>
-<section><h1>this is my about section</h1></section>
+<section><h1 class="mt-2 text-black flex justify-content-center items-center">This is my about section</h1></section>
 	
 </body>
 </html>

@@ -1,0 +1,3 @@
+-----command to run the tailwindcss u have to run this each time when u start project
+
+npx @tailwindcss/cli -i ./src/main/resources/static/css/styles.css -o ./src/main/resources/static/css/output.css --watch
